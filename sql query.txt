@@ -1,0 +1,25 @@
+SELECT sum(`todays_target`) as total FROM `daily_sales_executive_report` JOIN employee on employee.employee_id=daily_sales_executive_report.employee_id JOIN team on team.team_id=employee.e_team WHERE `employee.e_team` = '1' and `report_date` = '2020-01-01' BETWEEN `report_date` = '2020-01-31'
+..........Right   QUERY.........
+SELECT sum(`todays_target`) as total FROM `daily_sales_executive_report` JOIN employee on employee.employee_id=daily_sales_executive_report.employee_id JOIN team on team.team_id=employee.e_team WHERE employee.e_team = '1' and `report_date` BETWEEN '2020-01-01' AND '2020-01-31'
+
+
+
+
+SELECT sum(`p_fund`) as total FROM `salary_save` JOIN employee on employee.employee_code=salary_save.emp_code WHERE `dept` = 'Marketing & Sales' and employee_status = 1 and employee_level = 2
+SELECT COUNT(DISTINCT `department_id`) FROM `save_mobile_bill`
+..........................
+............................
+SELECT * FROM save_mobile_bill WHERE `department_id`='1' LIMIT 3
+SELECT `amount` FROM `save_mobile_bill` WHERE `amount` BETWEEN 1 and 100
+
+
+
+
+if (!empty($section)) {
+                                                    foreach ($section as $row) {
+                                                        $sslct = ($mobile_bill['section_id'] == $row['section_id']) ? ' selected=""' : '';
+                                                        ?>
+                                                        <option value="<?php echo $row['section_id']; ?>"<?= $sslct ?>><?php echo $row['section_name']; ?></option>
+                                                        <?php
+                                                    }
+                                                }
